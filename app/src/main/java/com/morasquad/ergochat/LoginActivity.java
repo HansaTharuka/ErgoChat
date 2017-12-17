@@ -85,6 +85,7 @@ mAuth.signInWithEmailAndPassword(logemail,logpassword).addOnCompleteListener(new
             mLoginProgress.dismiss();
 
             Intent mainIntent = new Intent(LoginActivity.this,MainActivity.class);
+            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(mainIntent);
             finish();
 
@@ -112,6 +113,7 @@ mAuth.signInWithEmailAndPassword(logemail,logpassword).addOnCompleteListener(new
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
+
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();

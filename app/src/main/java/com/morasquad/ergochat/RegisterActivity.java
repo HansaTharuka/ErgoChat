@@ -95,6 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
                     mRegProgress.dismiss();
 
                     Intent mainIntent = new Intent(RegisterActivity.this,MainActivity.class);
+                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(mainIntent);
                     finish();
 
