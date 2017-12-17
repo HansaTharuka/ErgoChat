@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -40,9 +41,10 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mToolBar = (Toolbar)findViewById(R.id.login_toolbar);
+        Toolbar mToolBar = (Toolbar)findViewById(R.id.login_toolbar);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Login");
 
         mLoginProgress = new ProgressDialog(this);
@@ -96,5 +98,24 @@ mAuth.signInWithEmailAndPassword(logemail,logpassword).addOnCompleteListener(new
 
     }
 });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        //super.onBackPressed();
+        Intent intenttoHome = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intenttoHome);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        return super.onOptionsItemSelected(menuItem);
     }
 }

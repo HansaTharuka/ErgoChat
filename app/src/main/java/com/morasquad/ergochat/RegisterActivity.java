@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -42,10 +43,11 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        mToolBar =(Toolbar)findViewById(R.id.register_toolbar);
+        Toolbar mToolBar =(Toolbar)findViewById(R.id.register_toolbar);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setTitle("Create account");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         mRegProgress = new ProgressDialog(this);
@@ -103,5 +105,22 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed()
+    {
+        //super.onBackPressed();
+        Intent intenttoHome = new Intent(RegisterActivity.this,MainActivity.class);
+        startActivity(intenttoHome);
+        finish();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        return super.onOptionsItemSelected(menuItem);
     }
 }
