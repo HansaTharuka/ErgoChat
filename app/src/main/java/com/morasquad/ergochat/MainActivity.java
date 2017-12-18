@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+
     private TabLayout mTabLayout;
 
     @Override
@@ -77,6 +78,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
          super.onOptionsItemSelected(item);
 
+//         switch (item.getItemId()){
+//
+//             case R.id.main_logout_btn:
+//                 FirebaseAuth.getInstance().signOut();
+//                 sendToStart();
+//                 break;
+//
+//             case R.id.main_settings_btn:
+//                 Intent settingsIntent = new Intent(MainActivity.this,SettingsActivity.class);
+//                 startActivity(settingsIntent);
+//                 break;
+//
+//             case R.id.main_all_btn:
+//                 Intent usersIntent = new Intent(MainActivity.this,UsersActivity.class);
+//                 startActivity(usersIntent);
+//                 break;
+//
+//         }
+
+
+
          if (item.getItemId()==R.id.main_logout_btn){
 
              FirebaseAuth.getInstance().signOut();
@@ -88,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
              Intent settingsIntent = new Intent(MainActivity.this,SettingsActivity.class);
              startActivity(settingsIntent);
              //finish();
+         }
+         if (item.getItemId()==R.id.main_all_btn){
+
+             Intent usersIntent = new Intent(MainActivity.this,UsersActivity.class);
+             startActivity(usersIntent);
+
          }
 
          return true;
