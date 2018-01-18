@@ -104,7 +104,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if (!image.equals("default")) {
 
-                    //Picasso.with(SettingsActivity.this).load(image).placeholder(R.drawable.defaultpp).into(mDisplayImage);
+                  //  Picasso.with(SettingsActivity.this).load(image).placeholder(R.drawable.defaultpp).into(mDisplayImage);
 
                     Picasso.with(SettingsActivity.this).load(image).networkPolicy(NetworkPolicy.OFFLINE)
                             .placeholder(R.drawable.defaultpp).into(mDisplayImage, new Callback() {
