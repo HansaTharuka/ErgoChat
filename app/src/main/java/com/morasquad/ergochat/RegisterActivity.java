@@ -27,6 +27,10 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 
+/**
+ * Created by Hansa on 1/18/2018.
+ */
+
 public class RegisterActivity extends AppCompatActivity {
 
     private TextInputLayout mDisplayName;

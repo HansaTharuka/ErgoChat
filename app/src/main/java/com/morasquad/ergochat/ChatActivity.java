@@ -50,6 +50,10 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * Created by Hansa on 1/18/2018.
+ */
+
 public class ChatActivity extends AppCompatActivity {
 
     private String mChatUser;
@@ -276,8 +280,7 @@ public class ChatActivity extends AppCompatActivity {
             final String current_user_ref = "messages/" + mCurrentUserId + "/" + mChatUser;
             final String chat_user_ref = "messages/" + mChatUser + "/" + mCurrentUserId;
 
-            DatabaseReference user_message_push = mRootRef.child("messages")
-                    .child(mCurrentUserId).child(mChatUser).push();
+            DatabaseReference user_message_push = mRootRef.child("messages").child(mCurrentUserId).child(mChatUser).push();
 
             final String push_id = user_message_push.getKey();
 

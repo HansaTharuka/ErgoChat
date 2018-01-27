@@ -41,6 +41,8 @@ import java.util.Random;
 import de.hdodenhof.circleimageview.CircleImageView;
 import id.zelory.compressor.Compressor;
 
+
+
 public class SettingsActivity extends AppCompatActivity {
 
     private DatabaseReference mUserDatabase;

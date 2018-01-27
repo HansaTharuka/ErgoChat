@@ -7,6 +7,14 @@
     android:background="@color/colorPrimary"
     tools:context="com.morasquad.ergochat.StartActivity">
 
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:foregroundGravity="center"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/ergologo" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -45,4 +53,5 @@
         android:paddingRight="20dp"
         android:text="ALREADY HAVE ACCOUNT"
         android:textColor="@android:color/white" />
+
 </RelativeLayout>

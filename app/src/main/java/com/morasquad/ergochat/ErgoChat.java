@@ -13,7 +13,7 @@ import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by AkshayeJH on 01/07/17.
+ * Created by Hansa on 1/18/2018.
  */
 
 public class ErgoChat extends Application{

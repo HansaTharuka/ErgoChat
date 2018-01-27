@@ -31,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Created by Hansa on 1/18/2018.
  */
 public class ChatsFragment extends Fragment {
 

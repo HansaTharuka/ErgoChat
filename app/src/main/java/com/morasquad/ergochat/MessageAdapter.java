@@ -23,10 +23,10 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by AkshayeJH on 24/07/17.
+ * Created by Hansa on 1/18/2018.
  */
 
-public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder>{
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
 
     private List<Messages> mMessageList;
@@ -42,7 +42,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public MessageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.message_single_layout ,parent, false);
+                .inflate(R.layout.message_single_layout, parent, false);
 
         return new MessageViewHolder(v);
 
@@ -70,13 +70,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public void onBindViewHolder(final MessageViewHolder viewHolder, int i) {
 
 
-
         Messages c = mMessageList.get(i);
 
         String from_user = c.getFrom();
         String message_type = c.getType();
-
-
 
 
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(from_user);
@@ -101,7 +98,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             }
         });
 
-        if(message_type.equals("text")) {
+        if (message_type.equals("text")) {
 
             viewHolder.messageText.setText(c.getMessage());
             viewHolder.messageImage.setVisibility(View.INVISIBLE);
@@ -121,10 +118,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public int getItemCount() {
         return mMessageList.size();
     }
-
-
-
-
 
 
 }

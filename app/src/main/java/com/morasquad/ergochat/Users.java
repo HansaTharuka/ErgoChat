@@ -1,8 +1,6 @@
 package com.morasquad.ergochat;
 
-/**
- * Created by Hansa on 12/18/2017.
- */
+
 
 public class Users {
     public String name;
